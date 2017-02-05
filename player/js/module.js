@@ -30,6 +30,12 @@
     function moveFrame(value){
         animationManager.moveFrame(value);
     }
+    function getRegisteredAnimation(elem) {
+        return animationManager.getRegisteredAnimation(elem);
+    }
+    function getRegisteredAnimations() {
+        return animationManager.getRegisteredAnimations();
+    }
     function searchAnimations(){
         if(standalone === true){
             animationManager.searchAnimations(animationData,standalone, renderer);
@@ -37,8 +43,8 @@
             animationManager.searchAnimations();
         }
     }
-    function registerAnimation(elem){
-        return animationManager.registerAnimation(elem);
+    function registerAnimation(elem, data){
+        return animationManager.registerAnimation(elem, data);
     }
     function resize(){
         animationManager.resize();
@@ -108,6 +114,8 @@
     bodymovinjs.setDirection = setDirection;
     bodymovinjs.stop = stop;
     bodymovinjs.moveFrame = moveFrame;
+    bodymovinjs.getRegisteredAnimation = getRegisteredAnimation;
+    bodymovinjs.getRegisteredAnimations = getRegisteredAnimations;
     bodymovinjs.searchAnimations = searchAnimations;
     bodymovinjs.registerAnimation = registerAnimation;
     bodymovinjs.loadAnimation = loadAnimation;
